@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--Layout Relative
+        components works relatively to its parent
+        works same as constraints layout, though, it hasn't the constraints visible
+        on the Design tab. So, you will write the constraints by using the arguments below
+
+        components:
+        are placed by using: [true | false]
+        layout_alignParentBottom, layout_alignParentEnd, layout_alignParentTop, layout_alignParentStart,
+        layout_centerInParent,
+        layout_centerHorizontal, layout_centerVertical
+
+        are placed by using reference: [@+id/button7]
+        layout_alignTop, layout_alignBottom.. = relative to inside content of referenced component
+        layout_alignStart, layout_alignEnd.. = relative to width size of referenced component
+        layout_toEndOf, layout_toStartOf.. = relative to be beside the referenced component [horizontal]
+        layout_below, layout_above.. = relative to be beside the referenced component [vertical]
+    -->
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
+        <!-- Using only true/false -->
+        <!-- will be left bottom-->
+<!--        <Button-->
+<!--            android:id="@+id/button7"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_alignParentBottom="true"-->
+<!--            android:layout_alignParentTop="false"-->
+<!--            android:layout_alignParentLeft="true"-->
+<!--            android:layout_alignParentRight="false"-->
+<!--            android:text="Button" />-->
+
+
+        <!--will be center bottom-->
+<!--    <Button-->
+<!--        android:id="@+id/button7"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentLeft="false"-->
+<!--        android:layout_alignParentTop="false"-->
+<!--        android:layout_alignParentRight="false"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:text="Button" />-->
+
+    <!-- Using only reference and true/false -->
+    <!-- by using the reference the alignment (true/false) will have the reference as basement -->
+
+    <!-- will be in the middle top of the picture -->
+<!--    <Button-->
+<!--        android:id="@+id/button7"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignTop="@+id/imageView" -->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:text="Button" />-->
+
+    <!-- will be in the middle top above of the picture -->
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/imageView"
+        android:layout_centerInParent="true"
+        android:text="Button" />
+</RelativeLayout>
